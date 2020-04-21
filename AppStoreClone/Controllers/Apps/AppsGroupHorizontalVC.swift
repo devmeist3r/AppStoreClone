@@ -12,6 +12,8 @@ class AppsGroupHorizontalVC: UICollectionViewController, UICollectionViewDelegat
     
     let cellId = "cellId"
     
+    var apps: [App] = []
+    
     init() {
         let layout = SnappingLayout()
         layout.scrollDirection = .horizontal
@@ -26,9 +28,11 @@ class AppsGroupHorizontalVC: UICollectionViewController, UICollectionViewDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionView.backgroundColor = .red
+        collectionView.backgroundColor = .white
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.register(AppsGroupHorizontalCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.decelerationRate = .fast
     }
     
 }
@@ -40,13 +44,13 @@ extension AppsGroupHorizontalVC {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 9
+        return self.apps.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! AppsGroupHorizontalCell
         
-        cell.backgroundColor = .yellow
+        cell.app = self.apps[indexPath.item]
         
         return cell
     }

@@ -10,14 +10,21 @@ import UIKit
 
 class AppsGroupCell: UICollectionViewCell {
     
+    var group: AppGrouop? {
+        didSet {
+            if let group = group {
+                titleLabel.text = group.titulo
+                appsGroupHorizontalVC.apps = group.apps
+            }
+        }
+    }
+    
     let titleLabel: UILabel = .textBoldLabel(text: "App grupo titulo", fontSize: 24)
     
     let appsGroupHorizontalVC = AppsGroupHorizontalVC()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        backgroundColor = .blue
         
         addSubview(titleLabel)
         titleLabel.fill(

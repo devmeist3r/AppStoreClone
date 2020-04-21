@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		70139484AF9C0EAC78228478 /* Pods_AppStoreClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F4AA72A75578E122A5115F /* Pods_AppStoreClone.framework */; };
+		E84AF8B1244FABDB0080EADA /* AppsGroupHorizontalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84AF8B0244FABDB0080EADA /* AppsGroupHorizontalCell.swift */; };
+		E84AF8B3244FAFEF0080EADA /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84AF8B2244FAFEF0080EADA /* AppGroup.swift */; };
 		E84DC64B244E8D6F00EC320F /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84DC64A244E8D6F00EC320F /* UIButton.swift */; };
 		E84DC64E244E8D8A00EC320F /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84DC64D244E8D8A00EC320F /* UIColor.swift */; };
 		E84DC651244E960A00EC320F /* SearchServes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84DC650244E960A00EC320F /* SearchServes.swift */; };
@@ -38,6 +40,8 @@
 		3040DF2900593338D5ED38AF /* Pods-AppStoreClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStoreClone.release.xcconfig"; path = "Target Support Files/Pods-AppStoreClone/Pods-AppStoreClone.release.xcconfig"; sourceTree = "<group>"; };
 		42F4AA72A75578E122A5115F /* Pods_AppStoreClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppStoreClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EE97AAA1B8AEE0FEAF5F28F /* Pods-AppStoreClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStoreClone.debug.xcconfig"; path = "Target Support Files/Pods-AppStoreClone/Pods-AppStoreClone.debug.xcconfig"; sourceTree = "<group>"; };
+		E84AF8B0244FABDB0080EADA /* AppsGroupHorizontalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsGroupHorizontalCell.swift; sourceTree = "<group>"; };
+		E84AF8B2244FAFEF0080EADA /* AppGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroup.swift; sourceTree = "<group>"; };
 		E84DC64A244E8D6F00EC320F /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		E84DC64D244E8D8A00EC320F /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		E84DC650244E960A00EC320F /* SearchServes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchServes.swift; sourceTree = "<group>"; };
@@ -109,6 +113,7 @@
 			children = (
 				E84DC653244E9BD900EC320F /* App.swift */,
 				E8798BEA244F44CD00E5A9FC /* FeaturedApp.swift */,
+				E84AF8B2244FAFEF0080EADA /* AppGroup.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -203,6 +208,7 @@
 			children = (
 				E8798BE6244F3EA800E5A9FC /* AppsHeaderCell.swift */,
 				E8798BEE244F4D9D00E5A9FC /* AppsGroupCell.swift */,
+				E84AF8B0244FABDB0080EADA /* AppsGroupHorizontalCell.swift */,
 			);
 			path = Apps;
 			sourceTree = "<group>";
@@ -343,6 +349,7 @@
 				E871FAC1244E4A33005C7479 /* UILabel.swift in Sources */,
 				E84DC64B244E8D6F00EC320F /* UIButton.swift in Sources */,
 				E871FABC244E477D005C7479 /* UIView.swift in Sources */,
+				E84AF8B1244FABDB0080EADA /* AppsGroupHorizontalCell.swift in Sources */,
 				E84DC64E244E8D8A00EC320F /* UIColor.swift in Sources */,
 				E8798BE9244F41BE00E5A9FC /* AppService.swift in Sources */,
 				E871FAB1244E3FFA005C7479 /* BaseTabBarVC.swift in Sources */,
@@ -352,6 +359,7 @@
 				E8798BED244F4BB700E5A9FC /* SnappingLayout.swift in Sources */,
 				E871FA9C244E3F35005C7479 /* AppDelegate.swift in Sources */,
 				E871FA9E244E3F35005C7479 /* SceneDelegate.swift in Sources */,
+				E84AF8B3244FAFEF0080EADA /* AppGroup.swift in Sources */,
 				E8798BEF244F4D9D00E5A9FC /* AppsGroupCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
