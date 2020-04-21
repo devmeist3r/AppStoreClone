@@ -24,6 +24,13 @@
 		E871FABC244E477D005C7479 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E871FABB244E477D005C7479 /* UIView.swift */; };
 		E871FABF244E481B005C7479 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E871FABE244E481B005C7479 /* UIImageView.swift */; };
 		E871FAC1244E4A33005C7479 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E871FAC0244E4A33005C7479 /* UILabel.swift */; };
+		E8798BE4244F374300E5A9FC /* AppsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8798BE3244F374300E5A9FC /* AppsHeader.swift */; };
+		E8798BE7244F3EA800E5A9FC /* AppsHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8798BE6244F3EA800E5A9FC /* AppsHeaderCell.swift */; };
+		E8798BE9244F41BE00E5A9FC /* AppService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8798BE8244F41BE00E5A9FC /* AppService.swift */; };
+		E8798BEB244F44CD00E5A9FC /* FeaturedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8798BEA244F44CD00E5A9FC /* FeaturedApp.swift */; };
+		E8798BED244F4BB700E5A9FC /* SnappingLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8798BEC244F4BB700E5A9FC /* SnappingLayout.swift */; };
+		E8798BEF244F4D9D00E5A9FC /* AppsGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8798BEE244F4D9D00E5A9FC /* AppsGroupCell.swift */; };
+		E8798BF2244F512600E5A9FC /* AppsGroupHorizontalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8798BF1244F512600E5A9FC /* AppsGroupHorizontalVC.swift */; };
 		E891CAF5244EB98C0041E404 /* AppsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E891CAF4244EB98C0041E404 /* AppsVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +56,13 @@
 		E871FABB244E477D005C7479 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		E871FABE244E481B005C7479 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		E871FAC0244E4A33005C7479 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
+		E8798BE3244F374300E5A9FC /* AppsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHeader.swift; sourceTree = "<group>"; };
+		E8798BE6244F3EA800E5A9FC /* AppsHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHeaderCell.swift; sourceTree = "<group>"; };
+		E8798BE8244F41BE00E5A9FC /* AppService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppService.swift; sourceTree = "<group>"; };
+		E8798BEA244F44CD00E5A9FC /* FeaturedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedApp.swift; sourceTree = "<group>"; };
+		E8798BEC244F4BB700E5A9FC /* SnappingLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnappingLayout.swift; sourceTree = "<group>"; };
+		E8798BEE244F4D9D00E5A9FC /* AppsGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsGroupCell.swift; sourceTree = "<group>"; };
+		E8798BF1244F512600E5A9FC /* AppsGroupHorizontalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsGroupHorizontalVC.swift; sourceTree = "<group>"; };
 		E891CAF4244EB98C0041E404 /* AppsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				E84DC650244E960A00EC320F /* SearchServes.swift */,
+				E8798BE8244F41BE00E5A9FC /* AppService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -93,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				E84DC653244E9BD900EC320F /* App.swift */,
+				E8798BEA244F44CD00E5A9FC /* FeaturedApp.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -155,6 +171,7 @@
 		E871FAB5244E4626005C7479 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E8798BE5244F3E9800E5A9FC /* Apps */,
 				E871FAB6244E4630005C7479 /* Search */,
 			);
 			path = Views;
@@ -176,14 +193,26 @@
 				E871FAC0244E4A33005C7479 /* UILabel.swift */,
 				E84DC64A244E8D6F00EC320F /* UIButton.swift */,
 				E84DC64D244E8D8A00EC320F /* UIColor.swift */,
+				E8798BEC244F4BB700E5A9FC /* SnappingLayout.swift */,
 			);
 			path = Lib;
+			sourceTree = "<group>";
+		};
+		E8798BE5244F3E9800E5A9FC /* Apps */ = {
+			isa = PBXGroup;
+			children = (
+				E8798BE6244F3EA800E5A9FC /* AppsHeaderCell.swift */,
+				E8798BEE244F4D9D00E5A9FC /* AppsGroupCell.swift */,
+			);
+			path = Apps;
 			sourceTree = "<group>";
 		};
 		E891CAF3244EB9820041E404 /* Apps */ = {
 			isa = PBXGroup;
 			children = (
 				E891CAF4244EB98C0041E404 /* AppsVC.swift */,
+				E8798BE3244F374300E5A9FC /* AppsHeader.swift */,
+				E8798BF1244F512600E5A9FC /* AppsGroupHorizontalVC.swift */,
 			);
 			path = Apps;
 			sourceTree = "<group>";
@@ -306,6 +335,7 @@
 				E84DC654244E9BD900EC320F /* App.swift in Sources */,
 				E871FABF244E481B005C7479 /* UIImageView.swift in Sources */,
 				E871FAA0244E3F35005C7479 /* ViewController.swift in Sources */,
+				E8798BF2244F512600E5A9FC /* AppsGroupHorizontalVC.swift in Sources */,
 				E871FAB9244E46DB005C7479 /* SearchCell.swift in Sources */,
 				E891CAF5244EB98C0041E404 /* AppsVC.swift in Sources */,
 				E84DC651244E960A00EC320F /* SearchServes.swift in Sources */,
@@ -314,9 +344,15 @@
 				E84DC64B244E8D6F00EC320F /* UIButton.swift in Sources */,
 				E871FABC244E477D005C7479 /* UIView.swift in Sources */,
 				E84DC64E244E8D8A00EC320F /* UIColor.swift in Sources */,
+				E8798BE9244F41BE00E5A9FC /* AppService.swift in Sources */,
 				E871FAB1244E3FFA005C7479 /* BaseTabBarVC.swift in Sources */,
+				E8798BE7244F3EA800E5A9FC /* AppsHeaderCell.swift in Sources */,
+				E8798BE4244F374300E5A9FC /* AppsHeader.swift in Sources */,
+				E8798BEB244F44CD00E5A9FC /* FeaturedApp.swift in Sources */,
+				E8798BED244F4BB700E5A9FC /* SnappingLayout.swift in Sources */,
 				E871FA9C244E3F35005C7479 /* AppDelegate.swift in Sources */,
 				E871FA9E244E3F35005C7479 /* SceneDelegate.swift in Sources */,
+				E8798BEF244F4D9D00E5A9FC /* AppsGroupCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

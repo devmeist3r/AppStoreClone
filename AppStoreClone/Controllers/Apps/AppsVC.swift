@@ -12,6 +12,7 @@ class AppsVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     let headerId = "headerId"
     let cellId = "cellId"
+    var appsFeatured: [FeaturedApp] = []
     
     init() {
         super.init(collectionViewLayout: UICollectionViewFlowLayout())
@@ -26,16 +27,40 @@ class AppsVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
         
         collectionView.backgroundColor = .white
         
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellId)
-        collectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerId)
+        collectionView.register(AppsHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerId)
+        
+        collectionView.register(AppsGroupCell.self, forCellWithReuseIdentifier: cellId)
+        
+        self.searchFeaturedApp()
     }
     
 }
 
 extension AppsVC {
+    func searchFeaturedApp() {
+        AppService.shared.getFeaturedApps { (apps, err) in
+            if let err = err {
+                print(err)
+                return
+            }
+            
+            if let apps = apps {
+                DispatchQueue.main.async {
+                    self.appsFeatured = apps
+                    self.collectionView.reloadData()
+                }
+            }
+        }
+    }
+}
+
+extension AppsVC {
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath)
-        header.backgroundColor = .blue
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath) as! AppsHeader
+        
+        header.appsFeatured = self.appsFeatured
+        header.collectionView.reloadData()
+        
         return header
     }
     
@@ -45,13 +70,11 @@ extension AppsVC {
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 3
+        return 1
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
-        
-        cell.backgroundColor = .red
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! AppsGroupCell
         
         return cell
     }

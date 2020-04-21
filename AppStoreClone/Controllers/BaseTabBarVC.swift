@@ -24,7 +24,7 @@ class BaseTabBarVC: UITabBarController {
             searchVC
         ]
         
-        selectedIndex = 2
+        selectedIndex = 1
     }
     
     func createTabItem(viewController: UIViewController, title: String, image: String) -> UIViewController {
