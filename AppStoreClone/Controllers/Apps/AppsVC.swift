@@ -15,6 +15,14 @@ class AppsVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     var appsFeatured: [FeaturedApp] = []
     var appsGroup: [AppGrouop] = []
     
+    let activityIndicatorView: UIActivityIndicatorView = {
+        let ai = UIActivityIndicatorView(style: .large)
+        ai.color = UIColor.cinza
+        ai.startAnimating()
+        ai.hidesWhenStopped = true
+        return ai
+    }()
+    
     init() {
         super.init(collectionViewLayout: UICollectionViewFlowLayout())
     }
@@ -33,49 +41,75 @@ class AppsVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
         collectionView.register(AppsGroupCell.self, forCellWithReuseIdentifier: cellId)
         collectionView.showsVerticalScrollIndicator = false
         
-        self.searchFeaturedApp()
+        view.addSubview(activityIndicatorView)
+        activityIndicatorView.centralSuperview()
         
-        self.getGroups(tipo: "apps-que-amamos")
-        self.getGroups(tipo: "top-apps-gratis")
-        self.getGroups(tipo: "top-apps-pagos")
+        self.searchApps()
+        
     }
     
 }
 
 extension AppsVC {
     
-    func searchFeaturedApp() {
+    func searchApps() {
+        var appsFeatured: [FeaturedApp]?
+        var appsLovely: AppGrouop?
+        var topAppsFree: AppGrouop?
+        var topAppsPaid: AppGrouop?
+        
+        let dispatchGroup = DispatchGroup()
+        
+        // Apps em destque
+        dispatchGroup.enter()
         AppService.shared.getFeaturedApps { (apps, err) in
-            if let err = err {
-                print(err)
-                return
+            appsFeatured = apps
+            dispatchGroup.leave()
+        }
+        
+        // Top apps amamos
+        dispatchGroup.enter()
+        AppService.shared.getGroupApp(type: "apps-que-amamos") { (group, error) in
+            appsLovely = group
+            dispatchGroup.leave()
+        }
+        
+        // Top apps gratis
+        dispatchGroup.enter()
+        AppService.shared.getGroupApp(type: "top-apps-gratis") { (group, error) in
+            topAppsFree = group
+            dispatchGroup.leave()
+        }
+        
+        // Top apps pagos
+        dispatchGroup.enter()
+        AppService.shared.getGroupApp(type: "top-apps-pagos") { (group, error) in
+            topAppsPaid = group
+            dispatchGroup.leave()
+        }
+        
+        
+        dispatchGroup.notify(queue: .main) {
+            if let apps = appsFeatured {
+                self.appsFeatured = apps
             }
             
-            if let apps = apps {
-                DispatchQueue.main.async {
-                    self.appsFeatured = apps
-                    self.collectionView.reloadData()
-                }
-            }
-        }
-    }
-    
-    func getGroups(tipo: String) {
-        AppService.shared.getGroupApp(type: tipo) { (group, err) in
-            if let err = err {
-                print(err)
-                return
+            if let apps = appsLovely {
+                self.appsGroup.append(apps)
             }
             
-            if let group = group {
-                DispatchQueue.main.async {
-                    self.appsGroup.append(group)
-                    self.collectionView.reloadData()
-                }
+            if let apps = topAppsFree {
+                self.appsGroup.append(apps)
             }
+            
+            if let apps = topAppsPaid {
+                self.appsGroup.append(apps)
+            }
+            
+            self.activityIndicatorView.stopAnimating()
+            self.collectionView.reloadData()
         }
     }
-    
 }
 
 extension AppsVC {
@@ -106,12 +140,16 @@ extension AppsVC {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! AppsGroupCell
         
         cell.group = self.appsGroup[indexPath.item]
-        
+        cell.appsGroupHorizontalVC.callback = { (app) in
+            let appDetailVC = AppDetailVC()
+            self.navigationController?.pushViewController(appDetailVC, animated: true
+            )
+        }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: view.bounds.width, height: 250)
+        return .init(width: view.bounds.width, height: 280)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

@@ -34,6 +34,7 @@
 		E8798BEF244F4D9D00E5A9FC /* AppsGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8798BEE244F4D9D00E5A9FC /* AppsGroupCell.swift */; };
 		E8798BF2244F512600E5A9FC /* AppsGroupHorizontalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8798BF1244F512600E5A9FC /* AppsGroupHorizontalVC.swift */; };
 		E891CAF5244EB98C0041E404 /* AppsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E891CAF4244EB98C0041E404 /* AppsVC.swift */; };
+		E8B057ED24512C0F00F34E93 /* AppDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B057EC24512C0F00F34E93 /* AppDetailVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		E8798BEE244F4D9D00E5A9FC /* AppsGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsGroupCell.swift; sourceTree = "<group>"; };
 		E8798BF1244F512600E5A9FC /* AppsGroupHorizontalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsGroupHorizontalVC.swift; sourceTree = "<group>"; };
 		E891CAF4244EB98C0041E404 /* AppsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsVC.swift; sourceTree = "<group>"; };
+		E8B057EC24512C0F00F34E93 /* AppDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 		E871FAAF244E3FD6005C7479 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E8B057EB24512BAD00F34E93 /* AppDetalhe */,
 				E891CAF3244EB9820041E404 /* Apps */,
 				E871FAB2244E43A5005C7479 /* Search */,
 				E871FAB0244E3FF9005C7479 /* BaseTabBarVC.swift */,
@@ -221,6 +224,14 @@
 				E8798BF1244F512600E5A9FC /* AppsGroupHorizontalVC.swift */,
 			);
 			path = Apps;
+			sourceTree = "<group>";
+		};
+		E8B057EB24512BAD00F34E93 /* AppDetalhe */ = {
+			isa = PBXGroup;
+			children = (
+				E8B057EC24512C0F00F34E93 /* AppDetailVC.swift */,
+			);
+			path = AppDetalhe;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -355,6 +366,7 @@
 				E871FAB1244E3FFA005C7479 /* BaseTabBarVC.swift in Sources */,
 				E8798BE7244F3EA800E5A9FC /* AppsHeaderCell.swift in Sources */,
 				E8798BE4244F374300E5A9FC /* AppsHeader.swift in Sources */,
+				E8B057ED24512C0F00F34E93 /* AppDetailVC.swift in Sources */,
 				E8798BEB244F44CD00E5A9FC /* FeaturedApp.swift in Sources */,
 				E8798BED244F4BB700E5A9FC /* SnappingLayout.swift in Sources */,
 				E871FA9C244E3F35005C7479 /* AppDelegate.swift in Sources */,
