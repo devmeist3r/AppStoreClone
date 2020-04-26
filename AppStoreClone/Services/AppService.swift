@@ -24,7 +24,7 @@ class AppService {
             do {
                 guard let data = data else { return }
                 let apps = try JSONDecoder().decode([FeaturedApp].self, from: data)
-                print(apps)
+//                print(apps)
                 completion(apps, nil)
             } catch let err {
                 completion(nil, err)
@@ -45,7 +45,7 @@ class AppService {
             do {
                 guard let data = data else { return }
                 let apps = try JSONDecoder().decode(AppGrouop.self, from: data)
-                print(apps)
+//                print(apps)
                 completion(apps, nil)
             } catch let err {
                 completion(nil, err)
