@@ -13,6 +13,16 @@ class AppDetailVC: UICollectionViewController, UICollectionViewDelegateFlowLayou
     let headerId = "headerId"
     let descriptionId = "descriptionId"
     let screenshotId = "screenshotId"
+    let evaluationId = "evaluationId"
+    
+    let activityIndicatorView: UIActivityIndicatorView = {
+        let ai = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
+        ai.color = .cinza
+        ai.startAnimating()
+        ai.hidesWhenStopped = true
+        
+        return ai
+    }()
     
     init() {
         super.init(collectionViewLayout: UICollectionViewFlowLayout())
@@ -31,11 +41,15 @@ class AppDetailVC: UICollectionViewController, UICollectionViewDelegateFlowLayou
         collectionView.register(AppDetailHeaderCell.self, forCellWithReuseIdentifier: headerId)
         collectionView.register(AppDetailDescriptionCell.self, forCellWithReuseIdentifier: descriptionId)
         collectionView.register(AppDetailScreenShotCell.self, forCellWithReuseIdentifier: screenshotId)
+        collectionView.register(AppDetailEvaluationCell.self, forCellWithReuseIdentifier: evaluationId)
         collectionView.showsVerticalScrollIndicator = false
+        
+        view.addSubview(activityIndicatorView)
+        activityIndicatorView.centralSuperview()
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return 1
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -59,6 +73,12 @@ class AppDetailVC: UICollectionViewController, UICollectionViewDelegateFlowLayou
             return cell
         }
         
+        if indexPath.item == 3 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: evaluationId, for: indexPath) as! AppDetailEvaluationCell
+            
+            return cell
+        }
+        
         return UICollectionViewCell()
         
     }
@@ -78,6 +98,10 @@ class AppDetailVC: UICollectionViewController, UICollectionViewDelegateFlowLayou
         
         if indexPath.item == 2 {
             height = 550
+        }
+        
+        if indexPath.item == 3 {
+            height = 280
         }
         
         return .init(width: width, height: height)

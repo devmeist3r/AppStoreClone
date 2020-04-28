@@ -29,6 +29,8 @@ class AppDetailScreenShotCell: UICollectionViewCell, UICollectionViewDelegate, U
         collectionView.dataSource = self
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         collectionView.register(AppDetailScreenschotCellImage.self, forCellWithReuseIdentifier: cellId)
+        collectionView.decelerationRate = .fast
+        collectionView.showsHorizontalScrollIndicator = false
         
         addSubview(titleLabel)
         titleLabel.fill(
