@@ -10,6 +10,16 @@ import UIKit
 
 class AppDetailCommentsCell: UICollectionViewCell {
     
+    var comment: AppComentario? {
+        didSet {
+            if let comment = comment {
+                titleLabel.text = comment.titulo
+                commentLabel.text = comment.descricao
+                evaluationImageView.image = UIImage(named: "avaliacao-\(comment.avaliacao)")
+            }
+        }
+    }
+    
     let titleLabel: UILabel = .textBoldLabel(text: "Muito bom", fontSize: 16)
     let commentLabel: UILabel = .textLabel(text: "Recomendo bastante esse app, esta me ajudando muito.", fontSize: 16, numberOfLines: 0)
     

@@ -10,6 +10,14 @@ import UIKit
 
 class AppDetailEvaluationCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
+    var app: App? {
+        didSet {
+            if app != nil {
+                self.collectionView.reloadData()
+            }
+        }
+    }
+    
     var titleLabel: UILabel = .textBoldLabel(text: "Avalições e opiniões", fontSize: 24)
     
     var collectionView: UICollectionView!
@@ -44,11 +52,16 @@ class AppDetailEvaluationCell: UICollectionViewCell, UICollectionViewDelegate, U
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return self.app?.comentarios?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! AppDetailCommentsCell
+        
+        if let comment = self.app?.comentarios?[indexPath.item] {
+            cell.comment = comment
+        }
+        
         return cell
     }
     

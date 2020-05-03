@@ -39,6 +39,7 @@
 		E8798BF2244F512600E5A9FC /* AppsGroupHorizontalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8798BF1244F512600E5A9FC /* AppsGroupHorizontalVC.swift */; };
 		E891CAF5244EB98C0041E404 /* AppsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E891CAF4244EB98C0041E404 /* AppsVC.swift */; };
 		E8B057ED24512C0F00F34E93 /* AppDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B057EC24512C0F00F34E93 /* AppDetailVC.swift */; };
+		E8BD8E38245E3B21008CC95B /* AppComentario.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BD8E37245E3B21008CC95B /* AppComentario.swift */; };
 		E8EA06DD2457B7D70058A4D9 /* AppDetailEvaluationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EA06DC2457B7D70058A4D9 /* AppDetailEvaluationCell.swift */; };
 		E8EA06E02457BD350058A4D9 /* AppDetailCommentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EA06DF2457BD350058A4D9 /* AppDetailCommentsCell.swift */; };
 /* End PBXBuildFile section */
@@ -80,6 +81,7 @@
 		E8798BF1244F512600E5A9FC /* AppsGroupHorizontalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsGroupHorizontalVC.swift; sourceTree = "<group>"; };
 		E891CAF4244EB98C0041E404 /* AppsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsVC.swift; sourceTree = "<group>"; };
 		E8B057EC24512C0F00F34E93 /* AppDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailVC.swift; sourceTree = "<group>"; };
+		E8BD8E37245E3B21008CC95B /* AppComentario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppComentario.swift; sourceTree = "<group>"; };
 		E8EA06DC2457B7D70058A4D9 /* AppDetailEvaluationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailEvaluationCell.swift; sourceTree = "<group>"; };
 		E8EA06DF2457BD350058A4D9 /* AppDetailCommentsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailCommentsCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -141,6 +143,7 @@
 				E84DC653244E9BD900EC320F /* App.swift */,
 				E8798BEA244F44CD00E5A9FC /* FeaturedApp.swift */,
 				E84AF8B2244FAFEF0080EADA /* AppGroup.swift */,
+				E8BD8E37245E3B21008CC95B /* AppComentario.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				E82698902454C1090073328B /* AppDetailDescriptionCell.swift in Sources */,
 				E871FABC244E477D005C7479 /* UIView.swift in Sources */,
 				E82698942455DB160073328B /* AppDetailScreenschotCellImage.swift in Sources */,
+				E8BD8E38245E3B21008CC95B /* AppComentario.swift in Sources */,
 				E84AF8B1244FABDB0080EADA /* AppsGroupHorizontalCell.swift in Sources */,
 				E84DC64E244E8D8A00EC320F /* UIColor.swift in Sources */,
 				E8798BE9244F41BE00E5A9FC /* AppService.swift in Sources */,

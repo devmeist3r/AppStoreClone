@@ -24,6 +24,15 @@ class AppDetailVC: UICollectionViewController, UICollectionViewDelegateFlowLayou
         return ai
     }()
     
+    var appId: Int! {
+        didSet {
+            self.searchApp(appId: appId)
+        }
+    }
+    
+    var app: App?
+    var loading: Bool = true
+    
     init() {
         super.init(collectionViewLayout: UICollectionViewFlowLayout())
     }
@@ -46,22 +55,38 @@ class AppDetailVC: UICollectionViewController, UICollectionViewDelegateFlowLayou
         
         view.addSubview(activityIndicatorView)
         activityIndicatorView.centralSuperview()
+        
+        navigationItem.title = app?.nome
+    }
+    
+    func searchApp(appId: Int) {
+        AppService.shared.searchAppId(appId: appId) { (app, err) in
+            if let app = app {
+                DispatchQueue.main.async {
+                    self.activityIndicatorView.stopAnimating()
+                    self.loading = false
+                    self.app = app
+                    self.collectionView.reloadData()
+                }
+            }
+        }
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return self.loading ? 1 : 4
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if indexPath.item == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: headerId, for: indexPath) as! AppDetailHeaderCell
+            cell.app = self.app
             return cell
         }
         
         if indexPath.item == 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: descriptionId, for: indexPath) as! AppDetailDescriptionCell
-            
+            cell.app = self.app
             return cell
         }
         
@@ -69,13 +94,13 @@ class AppDetailVC: UICollectionViewController, UICollectionViewDelegateFlowLayou
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: screenshotId, for: indexPath) as! AppDetailScreenShotCell
             
             cell.backgroundColor = .white
-            
+            cell.app = self.app
             return cell
         }
         
         if indexPath.item == 3 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: evaluationId, for: indexPath) as! AppDetailEvaluationCell
-            
+            cell.app = self.app
             return cell
         }
         
@@ -90,6 +115,7 @@ class AppDetailVC: UICollectionViewController, UICollectionViewDelegateFlowLayou
         
         if indexPath.item == 1 {
             let descriptionCell = AppDetailDescriptionCell(frame: CGRect(x: 0, y: 0, width: width, height: 1000))
+            descriptionCell.app = self.app
             descriptionCell.layoutIfNeeded()
             
             let estimateSizeCell = descriptionCell.systemLayoutSizeFitting(CGSize(width: width, height: 1000))

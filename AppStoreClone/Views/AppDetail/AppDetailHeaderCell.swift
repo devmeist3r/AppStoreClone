@@ -10,6 +10,16 @@ import UIKit
 
 class AppDetailHeaderCell: UICollectionViewCell {
     
+    var app: App? {
+        didSet {
+            if let app = app {
+                iconeImageView.sd_setImage(with: URL(string: app.iconeUrl), completed: nil)
+                nameLabel.text = app.nome
+                companyLabel.text = app.empresa
+            }
+        }
+    }
+    
     let iconeImageView: UIImageView = .iconImageView(width: 128, height: 128)
     let nameLabel: UILabel = .textLabel(text: "App nome", fontSize: 20, numberOfLines: 2)
     let companyLabel: UILabel = .textLabel(text: "App empresa", fontSize: 14)
@@ -33,8 +43,6 @@ class AppDetailHeaderCell: UICollectionViewCell {
         
         addSubview(stackView)
         stackView.fillSuperview(padding: .init(top: 0, left: 20, bottom: 0, right: 20))
-        
-        
         
     }
     

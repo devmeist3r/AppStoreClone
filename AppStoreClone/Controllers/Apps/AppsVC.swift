@@ -142,6 +142,8 @@ extension AppsVC {
         cell.group = self.appsGroup[indexPath.item]
         cell.appsGroupHorizontalVC.callback = { (app) in
             let appDetailVC = AppDetailVC()
+            appDetailVC.appId = app.id
+            appDetailVC.app = app
             self.navigationController?.pushViewController(appDetailVC, animated: true
             )
         }

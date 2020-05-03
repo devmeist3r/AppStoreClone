@@ -14,5 +14,7 @@ struct App: Decodable {
     let empresa: String
     let avaliacao: String
     let iconeUrl: String
+    let descricao: String?
     let screenshotUrls: [String]?
+    let comentarios: [AppComentario]?
 }
