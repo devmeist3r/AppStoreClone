@@ -40,6 +40,9 @@
 		E891CAF5244EB98C0041E404 /* AppsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E891CAF4244EB98C0041E404 /* AppsVC.swift */; };
 		E8B057ED24512C0F00F34E93 /* AppDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B057EC24512C0F00F34E93 /* AppDetailVC.swift */; };
 		E8BD8E38245E3B21008CC95B /* AppComentario.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BD8E37245E3B21008CC95B /* AppComentario.swift */; };
+		E8C932F82471EADA000AFA59 /* TodayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C932F72471EADA000AFA59 /* TodayVC.swift */; };
+		E8C932FB2471EE75000AFA59 /* TodayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C932FA2471EE75000AFA59 /* TodayCell.swift */; };
+		E8C932FD2471F4E1000AFA59 /* TodayDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C932FC2471F4E1000AFA59 /* TodayDetailVC.swift */; };
 		E8EA06DD2457B7D70058A4D9 /* AppDetailEvaluationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EA06DC2457B7D70058A4D9 /* AppDetailEvaluationCell.swift */; };
 		E8EA06E02457BD350058A4D9 /* AppDetailCommentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EA06DF2457BD350058A4D9 /* AppDetailCommentsCell.swift */; };
 /* End PBXBuildFile section */
@@ -82,6 +85,9 @@
 		E891CAF4244EB98C0041E404 /* AppsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsVC.swift; sourceTree = "<group>"; };
 		E8B057EC24512C0F00F34E93 /* AppDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailVC.swift; sourceTree = "<group>"; };
 		E8BD8E37245E3B21008CC95B /* AppComentario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppComentario.swift; sourceTree = "<group>"; };
+		E8C932F72471EADA000AFA59 /* TodayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayVC.swift; sourceTree = "<group>"; };
+		E8C932FA2471EE75000AFA59 /* TodayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCell.swift; sourceTree = "<group>"; };
+		E8C932FC2471F4E1000AFA59 /* TodayDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayDetailVC.swift; sourceTree = "<group>"; };
 		E8EA06DC2457B7D70058A4D9 /* AppDetailEvaluationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailEvaluationCell.swift; sourceTree = "<group>"; };
 		E8EA06DF2457BD350058A4D9 /* AppDetailCommentsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailCommentsCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -188,6 +194,7 @@
 		E871FAAF244E3FD6005C7479 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E8C932F62471EAC6000AFA59 /* Today */,
 				E8B057EB24512BAD00F34E93 /* AppDetail */,
 				E891CAF3244EB9820041E404 /* Apps */,
 				E871FAB2244E43A5005C7479 /* Search */,
@@ -207,6 +214,7 @@
 		E871FAB5244E4626005C7479 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E8C932F92471EE6A000AFA59 /* Today */,
 				E826988C2454BC140073328B /* AppDetail */,
 				E8798BE5244F3E9800E5A9FC /* Apps */,
 				E871FAB6244E4630005C7479 /* Search */,
@@ -261,6 +269,23 @@
 				E8B057EC24512C0F00F34E93 /* AppDetailVC.swift */,
 			);
 			path = AppDetail;
+			sourceTree = "<group>";
+		};
+		E8C932F62471EAC6000AFA59 /* Today */ = {
+			isa = PBXGroup;
+			children = (
+				E8C932F72471EADA000AFA59 /* TodayVC.swift */,
+				E8C932FC2471F4E1000AFA59 /* TodayDetailVC.swift */,
+			);
+			path = Today;
+			sourceTree = "<group>";
+		};
+		E8C932F92471EE6A000AFA59 /* Today */ = {
+			isa = PBXGroup;
+			children = (
+				E8C932FA2471EE75000AFA59 /* TodayCell.swift */,
+			);
+			path = Today;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -380,15 +405,18 @@
 			files = (
 				E84DC654244E9BD900EC320F /* App.swift in Sources */,
 				E871FABF244E481B005C7479 /* UIImageView.swift in Sources */,
+				E8C932F82471EADA000AFA59 /* TodayVC.swift in Sources */,
 				E871FAA0244E3F35005C7479 /* ViewController.swift in Sources */,
 				E8798BF2244F512600E5A9FC /* AppsGroupHorizontalVC.swift in Sources */,
 				E871FAB9244E46DB005C7479 /* SearchCell.swift in Sources */,
 				E826988E2454BC2B0073328B /* AppDetailHeaderCell.swift in Sources */,
 				E891CAF5244EB98C0041E404 /* AppsVC.swift in Sources */,
+				E8C932FB2471EE75000AFA59 /* TodayCell.swift in Sources */,
 				E82698922455D3150073328B /* AppDetailScreenShotCell.swift in Sources */,
 				E84DC651244E960A00EC320F /* SearchServes.swift in Sources */,
 				E871FAB4244E43B5005C7479 /* SearchVC.swift in Sources */,
 				E871FAC1244E4A33005C7479 /* UILabel.swift in Sources */,
+				E8C932FD2471F4E1000AFA59 /* TodayDetailVC.swift in Sources */,
 				E84DC64B244E8D6F00EC320F /* UIButton.swift in Sources */,
 				E82698902454C1090073328B /* AppDetailDescriptionCell.swift in Sources */,
 				E871FABC244E477D005C7479 /* UIView.swift in Sources */,
