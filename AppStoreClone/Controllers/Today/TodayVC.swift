@@ -57,9 +57,14 @@ extension TodayVC {
                 tabBarController?.tabBar.isHidden = true
                 let modalView = TodayDetailVC()
                 modalView.modalPresentationStyle = .overCurrentContext
+                
+                modalView.handlerClose = {
+                    self.tabBarController?.tabBar.isHidden = false
+                }
+                
                 self.present(modalView, animated: false) {
                     modalView.frame = frame
-                    modalView.animation()
+                    modalView.addUnic()
                 }
             }
         }

@@ -9,6 +9,9 @@
 import UIKit
 
 class TodayDetailVC: UIViewController {
+    
+    let closeButton: UIButton = .closeButton()
+    
     var centerView: UIView?
     var frame: CGRect?
     
@@ -17,10 +20,28 @@ class TodayDetailVC: UIViewController {
     var widthConstraint: NSLayoutConstraint?
     var heightConstraint: NSLayoutConstraint?
     
+    let todayDetailUnicVC = TodayDetailUnicVC()
+    
+    var handlerClose: (() -> ())?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .clear
-        centerView = UIView()
+    }
+    
+    func addButtonClose() {
+        view.addSubview(closeButton)
+        
+        closeButton.alpha = 0
+        closeButton.addTarget(self, action: #selector(handleCloseClick), for: .touchUpInside)
+        closeButton.fill(top: self.view.safeAreaLayoutGuide.topAnchor, leading: nil, bottom: nil, trailing: view.trailingAnchor, padding: .init(top: 18, left: 0, bottom: 0, right: 24), size: .init(width: 32, height: 32))
+        
+        UIView.animate(withDuration: 0.3, delay: 0.2, options: .showHideTransitionViews, animations: { self.closeButton.alpha = 1 }, completion: nil)
+    }
+    
+    func addUnic() {
+        self.centerView = todayDetailUnicVC.view
+        self.animation()
     }
     
     func animation() {
@@ -28,11 +49,11 @@ class TodayDetailVC: UIViewController {
         guard let frame = self.frame else { return }
         
         centerView.translatesAutoresizingMaskIntoConstraints = false
-        centerView.backgroundColor = .blue
         centerView.layer.cornerRadius = 16
         centerView.clipsToBounds = true
         
         view.addSubview(centerView)
+        self.addButtonClose()
         
         self.topConstraint = centerView.topAnchor.constraint(equalTo: view.topAnchor, constant: frame.origin.y)
         self.leadingConstraint = centerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: frame.origin.x)
@@ -56,5 +77,11 @@ class TodayDetailVC: UIViewController {
             self.view.layoutIfNeeded()
             
         }, completion: nil)
+    }
+    
+    @objc func handleCloseClick() {
+        self.handlerClose?()
+        
+        self.dismiss(animated: true, completion: nil)
     }
 }
