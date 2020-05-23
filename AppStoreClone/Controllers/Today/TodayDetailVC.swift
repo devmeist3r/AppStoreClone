@@ -10,6 +10,14 @@ import UIKit
 
 class TodayDetailVC: UIViewController {
     
+    var todayApp: TodayApp? {
+        didSet {
+            if todayApp != nil {
+                self.addUnic()
+            }
+        }
+    }
+    
     let closeButton: UIButton = .closeButton()
     
     var centerView: UIView?
@@ -40,6 +48,7 @@ class TodayDetailVC: UIViewController {
     }
     
     func addUnic() {
+        todayDetailUnicVC.todayApp = self.todayApp
         self.centerView = todayDetailUnicVC.view
         self.animation()
     }
@@ -79,9 +88,26 @@ class TodayDetailVC: UIViewController {
         }, completion: nil)
     }
     
+    func animationClose() {
+        UIView.animate(withDuration: 0.3, delay: 0.0, options: .overrideInheritedCurve, animations: {
+            if let frame = self.frame {
+                self.topConstraint?.constant = frame.origin.y
+                self.leadingConstraint?.constant = frame.origin.x
+                self.widthConstraint?.constant = frame.width
+                self.heightConstraint?.constant = frame.height
+                
+                self.centerView?.layer.cornerRadius = 16
+                
+                self.view.layoutIfNeeded()
+            }
+        }) { (_) in
+            self.dismiss(animated: false, completion: nil)
+        }
+    }
+    
     @objc func handleCloseClick() {
+        self.closeButton.isHidden = true
         self.handlerClose?()
-        
-        self.dismiss(animated: true, completion: nil)
+        self.animationClose()
     }
 }

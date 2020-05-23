@@ -39,6 +39,9 @@
 		E8798BEF244F4D9D00E5A9FC /* AppsGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8798BEE244F4D9D00E5A9FC /* AppsGroupCell.swift */; };
 		E8798BF2244F512600E5A9FC /* AppsGroupHorizontalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8798BF1244F512600E5A9FC /* AppsGroupHorizontalVC.swift */; };
 		E891CAF5244EB98C0041E404 /* AppsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E891CAF4244EB98C0041E404 /* AppsVC.swift */; };
+		E8A124CC2479DB6A00DF4BF7 /* TodayDetailUnicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A124CB2479DB6A00DF4BF7 /* TodayDetailUnicCell.swift */; };
+		E8A124CE2479DE5400DF4BF7 /* TodayService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A124CD2479DE5400DF4BF7 /* TodayService.swift */; };
+		E8A124D02479DEA900DF4BF7 /* TodayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A124CF2479DEA900DF4BF7 /* TodayApp.swift */; };
 		E8B057ED24512C0F00F34E93 /* AppDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B057EC24512C0F00F34E93 /* AppDetailVC.swift */; };
 		E8BD8E38245E3B21008CC95B /* AppComentario.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BD8E37245E3B21008CC95B /* AppComentario.swift */; };
 		E8C932F82471EADA000AFA59 /* TodayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C932F72471EADA000AFA59 /* TodayVC.swift */; };
@@ -85,6 +88,9 @@
 		E8798BEE244F4D9D00E5A9FC /* AppsGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsGroupCell.swift; sourceTree = "<group>"; };
 		E8798BF1244F512600E5A9FC /* AppsGroupHorizontalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsGroupHorizontalVC.swift; sourceTree = "<group>"; };
 		E891CAF4244EB98C0041E404 /* AppsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsVC.swift; sourceTree = "<group>"; };
+		E8A124CB2479DB6A00DF4BF7 /* TodayDetailUnicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayDetailUnicCell.swift; sourceTree = "<group>"; };
+		E8A124CD2479DE5400DF4BF7 /* TodayService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayService.swift; sourceTree = "<group>"; };
+		E8A124CF2479DEA900DF4BF7 /* TodayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayApp.swift; sourceTree = "<group>"; };
 		E8B057EC24512C0F00F34E93 /* AppDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailVC.swift; sourceTree = "<group>"; };
 		E8BD8E37245E3B21008CC95B /* AppComentario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppComentario.swift; sourceTree = "<group>"; };
 		E8C932F72471EADA000AFA59 /* TodayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayVC.swift; sourceTree = "<group>"; };
@@ -141,6 +147,7 @@
 			children = (
 				E84DC650244E960A00EC320F /* SearchServes.swift */,
 				E8798BE8244F41BE00E5A9FC /* AppService.swift */,
+				E8A124CD2479DE5400DF4BF7 /* TodayService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -152,6 +159,7 @@
 				E8798BEA244F44CD00E5A9FC /* FeaturedApp.swift */,
 				E84AF8B2244FAFEF0080EADA /* AppGroup.swift */,
 				E8BD8E37245E3B21008CC95B /* AppComentario.swift */,
+				E8A124CF2479DEA900DF4BF7 /* TodayApp.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -287,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				E8C932FA2471EE75000AFA59 /* TodayCell.swift */,
+				E8A124CB2479DB6A00DF4BF7 /* TodayDetailUnicCell.swift */,
 			);
 			path = Today;
 			sourceTree = "<group>";
@@ -411,6 +420,7 @@
 				E8C932F82471EADA000AFA59 /* TodayVC.swift in Sources */,
 				E871FAA0244E3F35005C7479 /* ViewController.swift in Sources */,
 				E8798BF2244F512600E5A9FC /* AppsGroupHorizontalVC.swift in Sources */,
+				E8A124D02479DEA900DF4BF7 /* TodayApp.swift in Sources */,
 				E871FAB9244E46DB005C7479 /* SearchCell.swift in Sources */,
 				E826988E2454BC2B0073328B /* AppDetailHeaderCell.swift in Sources */,
 				E891CAF5244EB98C0041E404 /* AppsVC.swift in Sources */,
@@ -425,12 +435,14 @@
 				E871FABC244E477D005C7479 /* UIView.swift in Sources */,
 				E84CD28724767ADF00F455CD /* TodayDetailUnicVC.swift in Sources */,
 				E82698942455DB160073328B /* AppDetailScreenschotCellImage.swift in Sources */,
+				E8A124CC2479DB6A00DF4BF7 /* TodayDetailUnicCell.swift in Sources */,
 				E8BD8E38245E3B21008CC95B /* AppComentario.swift in Sources */,
 				E84AF8B1244FABDB0080EADA /* AppsGroupHorizontalCell.swift in Sources */,
 				E84DC64E244E8D8A00EC320F /* UIColor.swift in Sources */,
 				E8798BE9244F41BE00E5A9FC /* AppService.swift in Sources */,
 				E871FAB1244E3FFA005C7479 /* BaseTabBarVC.swift in Sources */,
 				E8EA06DD2457B7D70058A4D9 /* AppDetailEvaluationCell.swift in Sources */,
+				E8A124CE2479DE5400DF4BF7 /* TodayService.swift in Sources */,
 				E8798BE7244F3EA800E5A9FC /* AppsHeaderCell.swift in Sources */,
 				E8798BE4244F374300E5A9FC /* AppsHeader.swift in Sources */,
 				E8B057ED24512C0F00F34E93 /* AppDetailVC.swift in Sources */,

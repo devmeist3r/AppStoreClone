@@ -10,6 +10,24 @@ import UIKit
 
 class TodayCell: UICollectionViewCell {
     
+    var todayApp: TodayApp? {
+        didSet {
+            if let todayApp = todayApp {
+                categoryLabel.text = todayApp.categoria
+                titleLabel.text = todayApp.titulo
+                descriptionLabel.text = todayApp.descricao
+                
+                if let image = todayApp.imageUrl {
+                    imagemView.image = UIImage(named: image)
+                }
+                
+                if let background = todayApp.backgroundColor {
+                    self.backgroundColor = UIColor(hexString: background)
+                }
+            }
+        }
+    }
+    
     let categoryLabel: UILabel = .textLabel(text: "VIAGEM", fontSize: 18)
     let titleLabel: UILabel = .textBoldLabel(text: "Explore o mundo \nsem medo", fontSize: 28, numberOfLines: 2)
     let imagemView: UIImageView = .todayImageView(named: "destaque-1")
@@ -36,7 +54,14 @@ class TodayCell: UICollectionViewCell {
         stackView.spacing = 8
         
         addSubview(stackView)
-        stackView.fillSuperview(padding: .init(top: 24, left: 24, bottom: 24, right: 24))
+//        stackView.fillSuperview(padding: .init(top: 24, left: 24, bottom: 24, right: 24))
+        stackView.fill(
+            top: self.safeAreaLayoutGuide.topAnchor,
+            leading: leadingAnchor,
+            bottom: bottomAnchor,
+            trailing: trailingAnchor,
+            padding: .init(top: 24, left: 24, bottom: 24, right: 24)
+        )
     }
     
     required init?(coder: NSCoder) {

@@ -10,6 +10,7 @@ import UIKit
 
 class TodayVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     let cellId = "cellId"
+    var todayApps: [TodayApp] = []
     
     init() {
         super.init(collectionViewLayout: UICollectionViewFlowLayout())
@@ -26,18 +27,31 @@ class TodayVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
         collectionView.register(TodayCell.self, forCellWithReuseIdentifier: cellId)
         collectionView.showsVerticalScrollIndicator = false
         
-//        navigationController?.navigationBar.isHidden = true
-        
+        self.getFeaturedApps()
     }
+    
+    func getFeaturedApps() {
+        TodayService.shared.searchFeatured { (apps, error) in
+            if let apps = apps {
+                DispatchQueue.main.async {
+                    self.todayApps = apps
+                    self.collectionView.reloadData()
+                }
+            }
+        }
+    }
+    
 }
 
 extension TodayVC {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return self.todayApps.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! TodayCell
+        
+        cell.todayApp = self.todayApps[indexPath.item]
         
         return cell
     }
@@ -64,9 +78,13 @@ extension TodayVC {
                 
                 self.present(modalView, animated: false) {
                     modalView.frame = frame
-                    modalView.addUnic()
+                    modalView.todayApp = self.todayApps[indexPath.item]
                 }
             }
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return .init(top: 20, left: 0, bottom: 20, right: 0)
     }
 }
