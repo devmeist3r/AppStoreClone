@@ -10,6 +10,7 @@ import UIKit
 
 class TodayVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     let cellId = "cellId"
+    let multiploId = "multiploId"
     var todayApps: [TodayApp] = []
     
     init() {
@@ -24,8 +25,10 @@ class TodayVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
         super.viewDidLoad()
         
         collectionView.backgroundColor = .systemGroupedBackground
-        collectionView.register(TodayCell.self, forCellWithReuseIdentifier: cellId)
         collectionView.showsVerticalScrollIndicator = false
+        
+        collectionView.register(TodayCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.register(TodayMultipleCell.self, forCellWithReuseIdentifier: multiploId)
         
         self.getFeaturedApps()
     }
@@ -49,11 +52,15 @@ extension TodayVC {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! TodayCell
-        
-        cell.todayApp = self.todayApps[indexPath.item]
-        
-        return cell
+        if indexPath.item < 2 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! TodayCell
+            cell.todayApp = self.todayApps[indexPath.item]
+            return cell
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: multiploId, for: indexPath) as! TodayMultipleCell
+            cell.todayApp = self.todayApps[indexPath.item]
+            return cell
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

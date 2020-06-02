@@ -20,7 +20,8 @@ class TodayService {
                 titulo: "Explore",
                 imageUrl: "destaque-1",
                 descricao: "Podemos viajar o mundo em buscar da beleza, mas nunca a encontraremos se não a carregarmos dentro de nós.",
-                backgroundColor: "#FFFFFF"
+                backgroundColor: "#FFFFFF",
+                apps: nil
             ),
             TodayApp(
                 id: 2,
@@ -28,7 +29,17 @@ class TodayService {
                 titulo: "Explore",
                 imageUrl: "destaque-2",
                 descricao: "Podemos viajar o mundo em buscar da beleza, mas nunca a encontraremos se não a carregarmos dentro de nós.",
-                backgroundColor: "#697866"
+                backgroundColor: "#697866",
+                apps: nil
+            ),
+            TodayApp(
+                id: 3,
+                categoria: "A LISTA DO DIA",
+                titulo: "Pedale melhor com \nApple Watch",
+                imageUrl: nil,
+                descricao: nil,
+                backgroundColor: nil,
+                apps: []
             )
         ]
         
