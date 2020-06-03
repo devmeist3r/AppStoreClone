@@ -12,8 +12,12 @@ class TodayDetailVC: UIViewController {
     
     var todayApp: TodayApp? {
         didSet {
-            if todayApp != nil {
-                self.addUnic()
+            if let todayApp = todayApp {
+                if todayApp.apps == nil {
+                    self.addUnic()
+                } else {
+                    self.addMultiple()
+                }
             }
         }
     }
@@ -29,12 +33,22 @@ class TodayDetailVC: UIViewController {
     var heightConstraint: NSLayoutConstraint?
     
     let todayDetailUnicVC = TodayDetailUnicVC()
+    let todayDetailMultiVC = TodayDetailMultipleVC()
     
     var handlerClose: (() -> ())?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .clear
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = false
     }
     
     func addButtonClose() {
@@ -50,6 +64,20 @@ class TodayDetailVC: UIViewController {
     func addUnic() {
         todayDetailUnicVC.todayApp = self.todayApp
         self.centerView = todayDetailUnicVC.view
+        self.animation()
+    }
+    
+    func addMultiple() {
+        todayDetailMultiVC.todayApp = self.todayApp
+        todayDetailMultiVC.handleClick = { app in
+            let detailVC = AppDetailVC()
+            detailVC.title = app.nome
+            detailVC.appId = app.id
+            detailVC.app = app
+            
+            self.navigationController?.pushViewController(detailVC, animated: true)
+        }
+        self.centerView = todayDetailMultiVC.view
         self.animation()
     }
     
@@ -76,7 +104,7 @@ class TodayDetailVC: UIViewController {
         
         view.layoutIfNeeded()
         
-        UIView.animate(withDuration: 0.3, delay: 0.0, options: .overrideInheritedCurve, animations: {
+        UIView.animate(withDuration: 0.6, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .overrideInheritedCurve, animations: {
             
             self.topConstraint?.constant = 0
             self.leadingConstraint?.constant = 0
@@ -89,7 +117,11 @@ class TodayDetailVC: UIViewController {
     }
     
     func animationClose() {
-        UIView.animate(withDuration: 0.3, delay: 0.0, options: .overrideInheritedCurve, animations: {
+        
+        self.todayDetailMultiVC.tableView.setContentOffset(CGPoint(x: 0, y: -self.todayDetailMultiVC.tableView.safeAreaInsets.top), animated: false)
+        self.todayDetailMultiVC.tableView.layoutIfNeeded()
+        
+        UIView.animate(withDuration: 0.6, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .overrideInheritedCurve, animations: {
             if let frame = self.frame {
                 self.topConstraint?.constant = frame.origin.y
                 self.leadingConstraint?.constant = frame.origin.x
@@ -97,6 +129,8 @@ class TodayDetailVC: UIViewController {
                 self.heightConstraint?.constant = frame.height
                 
                 self.centerView?.layer.cornerRadius = 16
+                
+                self.todayDetailUnicVC.tableView.contentOffset = .zero
                 
                 self.view.layoutIfNeeded()
             }

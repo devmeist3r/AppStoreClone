@@ -9,6 +9,16 @@
 import UIKit
 
 class TodayVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+    
+    let activityIndicatorView: UIActivityIndicatorView = {
+        let ai = UIActivityIndicatorView(style: .large)
+        ai.color = UIColor.cinza
+        ai.startAnimating()
+        ai.hidesWhenStopped = true
+        return ai
+    }()
+    
+    let headerId = "headerId"
     let cellId = "cellId"
     let multiploId = "multiploId"
     var todayApps: [TodayApp] = []
@@ -29,8 +39,15 @@ class TodayVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
         
         collectionView.register(TodayCell.self, forCellWithReuseIdentifier: cellId)
         collectionView.register(TodayMultipleCell.self, forCellWithReuseIdentifier: multiploId)
+        collectionView.register(TodayHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerId)
+        
+        view.addSubview(activityIndicatorView)
+        activityIndicatorView.centralSuperview()
         
         self.getFeaturedApps()
+        
+        navigationController?.navigationBar.isHidden = true
+        
     }
     
     func getFeaturedApps() {
@@ -39,6 +56,7 @@ class TodayVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
                 DispatchQueue.main.async {
                     self.todayApps = apps
                     self.collectionView.reloadData()
+                    self.activityIndicatorView.stopAnimating()
                 }
             }
         }
@@ -47,6 +65,17 @@ class TodayVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 }
 
 extension TodayVC {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return .init(width: view.bounds.width, height: 90)
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let header  = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath) as! TodayHeader
+        
+        return header
+    }
+    
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.todayApps.count
     }
@@ -83,7 +112,11 @@ extension TodayVC {
                     self.tabBarController?.tabBar.isHidden = false
                 }
                 
-                self.present(modalView, animated: false) {
+                let modalNav = UINavigationController(rootViewController: modalView)
+                modalNav.modalPresentationStyle = .overCurrentContext
+                modalNav.view.backgroundColor = .clear
+                
+                self.present(modalNav, animated: false) {
                     modalView.frame = frame
                     modalView.todayApp = self.todayApps[indexPath.item]
                 }

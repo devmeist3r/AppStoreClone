@@ -13,7 +13,7 @@ class TodayService {
     static let shared = TodayService()
     
     func searchFeatured(completion: @escaping ([TodayApp]?, Error?) -> ()) {
-        let todayApps: Array<TodayApp> = [
+        var todayApps: Array<TodayApp> = [
             TodayApp(
                 id: 1,
                 categoria: "Viagem",
@@ -32,17 +32,24 @@ class TodayService {
                 backgroundColor: "#697866",
                 apps: nil
             ),
-            TodayApp(
-                id: 3,
-                categoria: "A LISTA DO DIA",
-                titulo: "Pedale melhor com \nApple Watch",
-                imageUrl: nil,
-                descricao: nil,
-                backgroundColor: nil,
-                apps: []
-            )
+            
         ]
         
-        completion(todayApps, nil)
+        AppService.shared.searchApps { (apps, err) in
+            if let apps = apps {
+                todayApps.append(
+                    TodayApp(
+                        id: 3,
+                        categoria: "A LISTA DO DIA",
+                        titulo: "Pedale melhor com \nApple Watch",
+                        imageUrl: nil,
+                        descricao: nil,
+                        backgroundColor: nil,
+                        apps: apps
+                    )
+                )
+            }
+            completion(todayApps, nil)
+        }   
     }
 }

@@ -36,7 +36,9 @@ class TodayMultipleCell: UICollectionViewCell, UITableViewDelegate, UITableViewD
         tableView = UITableView()
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.isUserInteractionEnabled = false
         tableView.register(TodayMultipleAppCell.self, forCellReuseIdentifier: cellId)
+        tableView.separatorInset = UIEdgeInsets(top: 0, left: 64, bottom: 0, right: 0)
         tableView.showsVerticalScrollIndicator = false
         
         
@@ -61,7 +63,7 @@ class TodayMultipleCell: UICollectionViewCell, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! TodayMultipleAppCell
-        
+        cell.app = self.todayApp?.apps?[indexPath.item]
         return cell
     }
     
