@@ -1,15 +1,6 @@
-//
-//  AppDetailCommentsCell.swift
-//  AppStoreClone
-//
-//  Created by Lucas Inocencio on 27/04/20.
-//  Copyright © 2020 Lucas Inocencio. All rights reserved.
-//
-
 import UIKit
 
 class AppDetailCommentsCell: UICollectionViewCell {
-    
     var comment: AppComentario? {
         didSet {
             if let comment = comment {
@@ -21,7 +12,11 @@ class AppDetailCommentsCell: UICollectionViewCell {
     }
     
     let titleLabel: UILabel = .textBoldLabel(text: "Muito bom", fontSize: 16)
-    let commentLabel: UILabel = .textLabel(text: "Recomendo bastante esse app, esta me ajudando muito.", fontSize: 16, numberOfLines: 0)
+    let commentLabel: UILabel = .textLabel(
+        text: "Recomendo bastante esse app, esta me ajudando muito.",
+        fontSize: 16,
+        numberOfLines: 0
+    )
     
     let evaluationImageView: UIImageView = {
         let image = UIImageView()
@@ -57,5 +52,4 @@ class AppDetailCommentsCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }

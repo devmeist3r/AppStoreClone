@@ -1,11 +1,3 @@
-//
-//  AppDetailEvaluationCell.swift
-//  AppStoreClone
-//
-//  Created by Lucas Inocencio on 27/04/20.
-//  Copyright © 2020 Lucas Inocencio. All rights reserved.
-//
-
 import UIKit
 
 class AppDetailEvaluationCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -68,5 +60,4 @@ class AppDetailEvaluationCell: UICollectionViewCell, UICollectionViewDelegate, U
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return .init(width: collectionView.bounds.width - 40, height: collectionView.bounds.height)
     }
-    
 }

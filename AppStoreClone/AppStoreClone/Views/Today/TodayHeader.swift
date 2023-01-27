@@ -1,11 +1,3 @@
-//
-//  TodayHeader.swift
-//  AppStoreClone
-//
-//  Created by Lucas Inocencio on 03/06/20.
-//  Copyright © 2020 Lucas Inocencio. All rights reserved.
-//
-
 import UIKit
 
 class TodayHeader: UICollectionReusableView {
@@ -63,6 +55,4 @@ class TodayHeader: UICollectionReusableView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    
 }

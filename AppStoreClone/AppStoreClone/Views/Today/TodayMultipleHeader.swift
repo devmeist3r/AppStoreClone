@@ -1,15 +1,6 @@
-//
-//  TodayMultipleHeader.swift
-//  AppStoreClone
-//
-//  Created by Lucas Inocencio on 02/06/20.
-//  Copyright © 2020 Lucas Inocencio. All rights reserved.
-//
-
 import UIKit
 
 class TodayMultiHeader: UIView {
-    
     var todayApp: TodayApp? {
         didSet {
             if let todayApp = todayApp {
@@ -26,16 +17,20 @@ class TodayMultiHeader: UIView {
         super.init(frame: frame)
         
         let stackView = UIStackView(arrangedSubviews: [categoryLabel, titleLabel])
-               stackView.axis = .vertical
-               stackView.spacing = 8
-               
-               addSubview(stackView)
-               stackView.fill(top: self.safeAreaLayoutGuide.topAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, padding: .init(top: 24, left: 24, bottom: 24, right: 24))
+        stackView.axis = .vertical
+        stackView.spacing = 8
+        
+        addSubview(stackView)
+        stackView.fill(
+            top: self.safeAreaLayoutGuide.topAnchor,
+            leading: leadingAnchor,
+            bottom: bottomAnchor,
+            trailing: trailingAnchor,
+            padding: .init(top: 24, left: 24, bottom: 24, right: 24)
+        )
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    
 }

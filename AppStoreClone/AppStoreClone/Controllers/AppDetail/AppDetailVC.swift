@@ -1,15 +1,6 @@
-//
-//  AppDetailVC.swift
-//  AppStoreClone
-//
-//  Created by Lucas Inocencio on 22/04/20.
-//  Copyright © 2020 Lucas Inocencio. All rights reserved.
-//
-
 import UIKit
 
 class AppDetailVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
-    
     let headerId = "headerId"
     let descriptionId = "descriptionId"
     let screenshotId = "screenshotId"

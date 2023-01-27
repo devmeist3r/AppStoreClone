@@ -1,11 +1,3 @@
-//
-//  AppDetailHeaderCell.swift
-//  AppStoreClone
-//
-//  Created by Lucas Inocencio on 25/04/20.
-//  Copyright © 2020 Lucas Inocencio. All rights reserved.
-//
-
 import UIKit
 
 class AppDetailHeaderCell: UICollectionViewCell {
@@ -49,7 +41,4 @@ class AppDetailHeaderCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    
-    
 }

@@ -1,15 +1,6 @@
-//
-//  UIImageView.swift
-//  AppStoreClone
-//
-//  Created by Lucas Inocencio on 20/04/20.
-//  Copyright © 2020 Lucas Inocencio. All rights reserved.
-//
-
 import UIKit
 
 extension UIImageView {
-    
     static func iconImageView(width: CGFloat = 64, height: CGFloat = 64) -> UIImageView {
         let image = UIImageView()
         
@@ -44,5 +35,4 @@ extension UIImageView {
         image.contentMode = .scaleAspectFit
         return image
     }
-    
 }

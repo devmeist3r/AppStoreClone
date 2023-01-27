@@ -1,11 +1,3 @@
-//
-//  TodayCell.swift
-//  AppStoreClone
-//
-//  Created by Lucas Inocencio on 17/05/20.
-//  Copyright © 2020 Lucas Inocencio. All rights reserved.
-//
-
 import UIKit
 
 class TodayCell: UICollectionViewCell {
@@ -54,7 +46,7 @@ class TodayCell: UICollectionViewCell {
         stackView.spacing = 8
         
         addSubview(stackView)
-//        stackView.fillSuperview(padding: .init(top: 24, left: 24, bottom: 24, right: 24))
+        //        stackView.fillSuperview(padding: .init(top: 24, left: 24, bottom: 24, right: 24))
         stackView.fill(
             top: self.safeAreaLayoutGuide.topAnchor,
             leading: leadingAnchor,

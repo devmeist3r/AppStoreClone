@@ -1,15 +1,6 @@
-//
-//  TodayMultipleAppCell.swift
-//  AppStoreClone
-//
-//  Created by Lucas Inocencio on 02/06/20.
-//  Copyright © 2020 Lucas Inocencio. All rights reserved.
-//
-
 import UIKit
 
 class TodayMultipleAppCell: UITableViewCell {
-    
     var app: App? {
         didSet {
             if let app = app {
@@ -19,8 +10,6 @@ class TodayMultipleAppCell: UITableViewCell {
             }
         }
     }
-    
-    
     
     let iconImageView: UIImageView = .iconImageView(width: 48, height: 48)
     let titleLabel: UILabel = .textLabel(text: "App nome", fontSize: 16)
@@ -44,8 +33,13 @@ class TodayMultipleAppCell: UITableViewCell {
         stackView.alignment = .center
         
         addSubview(stackView)
-//        stackView.fillSuperview(padding: .init(top: 14, left: 0, bottom: 14, right: 0))
-        stackView.fill(top: topAnchor, leading: nil, bottom: bottomAnchor, trailing: nil, padding: .init(top: 14, left: 0, bottom: 14, right: 0))
+        stackView.fill(
+            top: topAnchor,
+            leading: nil,
+            bottom: bottomAnchor,
+            trailing: nil,
+            padding: .init(top: 14, left: 0, bottom: 14, right: 0)
+        )
         
         self.leadingConstraint = stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0)
         self.tralingConstraint = stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0)

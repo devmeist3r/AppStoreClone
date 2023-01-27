@@ -1,16 +1,6 @@
-//
-//  BaseTabBarVC.swift
-//  AppStoreClone
-//
-//  Created by Lucas Inocencio on 20/04/20.
-//  Copyright © 2020 Lucas Inocencio. All rights reserved.
-//
-
-import Foundation
 import UIKit
 
 class BaseTabBarVC: UITabBarController {
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,5 +29,4 @@ class BaseTabBarVC: UITabBarController {
         
         return navController
     }
-    
 }

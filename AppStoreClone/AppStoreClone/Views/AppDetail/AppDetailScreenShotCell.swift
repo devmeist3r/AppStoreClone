@@ -1,11 +1,3 @@
-//
-//  AppDetailScreenShotCell.swift
-//  AppStoreClone
-//
-//  Created by Lucas Inocencio on 26/04/20.
-//  Copyright © 2020 Lucas Inocencio. All rights reserved.
-//
-
 import UIKit
 
 class AppDetailScreenShotCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -82,5 +74,3 @@ class AppDetailScreenShotCell: UICollectionViewCell, UICollectionViewDelegate, U
         return .init(width: 220, height: collectionView.bounds.height)
     }
 }
-
-

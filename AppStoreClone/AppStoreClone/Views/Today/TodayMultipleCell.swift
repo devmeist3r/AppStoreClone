@@ -1,11 +1,3 @@
-//
-//  TodayMultipleCell.swift
-//  AppStoreClone
-//
-//  Created by Lucas Inocencio on 02/06/20.
-//  Copyright © 2020 Lucas Inocencio. All rights reserved.
-//
-
 import UIKit
 
 class TodayMultipleCell: UICollectionViewCell, UITableViewDelegate, UITableViewDataSource {
@@ -20,7 +12,7 @@ class TodayMultipleCell: UICollectionViewCell, UITableViewDelegate, UITableViewD
     }
     
     let cellId = "cellId"
-
+    
     let categoryLabel: UILabel = .textLabel(text: "VIAGEM", fontSize: 18)
     let titleLabel: UILabel = .textBoldLabel(text: "Explore o mundo \nsem medo", fontSize: 28, numberOfLines: 2)
     
@@ -66,5 +58,4 @@ class TodayMultipleCell: UICollectionViewCell, UITableViewDelegate, UITableViewD
         cell.app = self.todayApp?.apps?[indexPath.item]
         return cell
     }
-    
 }

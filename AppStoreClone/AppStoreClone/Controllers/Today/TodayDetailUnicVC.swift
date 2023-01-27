@@ -1,11 +1,3 @@
-//
-//  TodayDetailUnicVC.swift
-//  AppStoreClone
-//
-//  Created by Lucas Inocencio on 21/05/20.
-//  Copyright © 2020 Lucas Inocencio. All rights reserved.
-//
-
 import UIKit
 
 class TodayDetailUnicVC: UITableViewController {

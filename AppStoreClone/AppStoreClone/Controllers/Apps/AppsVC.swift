@@ -1,15 +1,6 @@
-//
-//  AppsVC.swift
-//  AppStoreClone
-//
-//  Created by Lucas Inocencio on 21/04/20.
-//  Copyright © 2020 Lucas Inocencio. All rights reserved.
-//
-
 import UIKit
 
 class AppsVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
-    
     let headerId = "headerId"
     let cellId = "cellId"
     var appsFeatured: [FeaturedApp] = []
@@ -44,10 +35,8 @@ class AppsVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
         view.addSubview(activityIndicatorView)
         activityIndicatorView.centralSuperview()
         
-        self.searchApps()
-        
+        self.searchApps()   
     }
-    
 }
 
 extension AppsVC {

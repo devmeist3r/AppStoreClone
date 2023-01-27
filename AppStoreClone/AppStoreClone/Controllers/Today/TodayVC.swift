@@ -1,11 +1,3 @@
-//
-//  TodayVC.swift
-//  AppStoreClone
-//
-//  Created by Lucas Inocencio on 17/05/20.
-//  Copyright © 2020 Lucas Inocencio. All rights reserved.
-//
-
 import UIKit
 
 class TodayVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {

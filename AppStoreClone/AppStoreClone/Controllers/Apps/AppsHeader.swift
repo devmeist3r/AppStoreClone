@@ -1,11 +1,3 @@
-//
-//  AppsHeader.swift
-//  AppStoreClone
-//
-//  Created by Lucas Inocencio on 21/04/20.
-//  Copyright © 2020 Lucas Inocencio. All rights reserved.
-//
-
 import UIKit
 
 class AppsHeader: UICollectionReusableView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -16,8 +8,6 @@ class AppsHeader: UICollectionReusableView, UICollectionViewDelegate, UICollecti
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-//        let layout = UICollectionViewFlowLayout()
         let layout = SnappingLayout()
         layout.scrollDirection = .horizontal
         

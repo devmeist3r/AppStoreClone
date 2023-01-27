@@ -1,15 +1,6 @@
-//
-//  TodayDetailMultipleVC.swift
-//  AppStoreClone
-//
-//  Created by Lucas Inocencio on 02/06/20.
-//  Copyright © 2020 Lucas Inocencio. All rights reserved.
-//
-
 import UIKit
 
 class TodayDetailMultipleVC: UITableViewController {
-    
     var todayApp: TodayApp? {
         didSet {
             if let todayApp = todayApp {

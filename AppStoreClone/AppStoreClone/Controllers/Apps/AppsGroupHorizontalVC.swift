@@ -1,19 +1,8 @@
-//
-//  AppsGroupHorizontalVC.swift
-//  AppStoreClone
-//
-//  Created by Lucas Inocencio on 21/04/20.
-//  Copyright © 2020 Lucas Inocencio. All rights reserved.
-//
-
 import UIKit
 
 class AppsGroupHorizontalVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
-    
     let cellId = "cellId"
-    
     var apps: [App] = []
-    
     var callback: ((App) -> ())?
     
     init() {
@@ -40,7 +29,6 @@ class AppsGroupHorizontalVC: UICollectionViewController, UICollectionViewDelegat
 }
 
 extension AppsGroupHorizontalVC {
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return .init(width: view.bounds.width - 40, height: view.bounds.height / 3 - 1)
     }

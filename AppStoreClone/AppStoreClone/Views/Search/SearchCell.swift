@@ -1,16 +1,7 @@
-//
-//  SearchCell.swift
-//  AppStoreClone
-//
-//  Created by Lucas Inocencio on 20/04/20.
-//  Copyright © 2020 Lucas Inocencio. All rights reserved.
-//
-
 import UIKit
 import SDWebImage
 
 class SearchCell: UITableViewCell {
-    
     var app: App! {
         didSet {
             titleLabel.text = app.nome

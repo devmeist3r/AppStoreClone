@@ -1,15 +1,6 @@
-//
-//  AppsGroupCell.swift
-//  AppStoreClone
-//
-//  Created by Lucas Inocencio on 21/04/20.
-//  Copyright © 2020 Lucas Inocencio. All rights reserved.
-//
-
 import UIKit
 
 class AppsGroupCell: UICollectionViewCell {
-    
     var group: AppGrouop? {
         didSet {
             if let group = group {
